@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <head>
+        <title>JISON示例</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="jsonlint.js"></script>
+    </head>
+    <html>
+       <script>
+            axios.defaults.transformResponse = [function (data) {
+                return jsonlint.parse(data);
+            }];
+            axios.get('https://caihai123.github.io/applet/jsons/purchase.json').then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+       </script>
+    </html>
+</head>

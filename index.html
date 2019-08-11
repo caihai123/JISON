@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<head>
+<html>
     <head>
         <title>JISON示例</title>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="jsonlint.js"></script>
     </head>
-    <html>
+    <body>
        <script>
             axios.defaults.transformResponse = [function (data) {
                 return jsonlint.parse(data);
@@ -16,5 +16,5 @@
                 console.log(error);
             });
        </script>
-    </html>
-</head>
+    </body>
+</html>
